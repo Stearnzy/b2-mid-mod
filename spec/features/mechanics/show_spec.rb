@@ -88,6 +88,8 @@ describe "As a user" do
 
       fill_in :ride_id, with: @ride_4.id
       click_on "Submit"
+
+      expect(page).to have_content("#{@ride_4.name}")
     end
   end
 end
