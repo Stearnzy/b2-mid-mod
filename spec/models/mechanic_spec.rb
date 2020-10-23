@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Mechanic, type: :model do
   describe "relationships" do
     it { should have_many :rides }
-    it { should belong_to :rides }
+    it { should belong_to :ride }
   end
 
   describe "validations" do
