@@ -52,12 +52,12 @@ describe "As a user" do
         mechanic_id: @mechanic_1.id
         })
 
-      @ride_mech_1 = RideMechanic.create!({
+      @ride_mech_2 = RideMechanic.create!({
         ride_id: @ride_3.id,
         mechanic_id: @mechanic_1.id
         })
 
-      @ride_mech_1 = RideMechanic.create!({
+      @ride_mech_3 = RideMechanic.create!({
         ride_id: @ride_2.id,
         mechanic_id: @mechanic_2.id
         })
@@ -90,6 +90,12 @@ describe "As a user" do
       click_on "Submit"
 
       expect(page).to have_content("#{@ride_4.name}")
+    end
+
+    it "I see all their rides listed in alphabetical order" do
+      visit "/mechanics/#{@mechanic_1.id}"
+
+      
     end
   end
 end
