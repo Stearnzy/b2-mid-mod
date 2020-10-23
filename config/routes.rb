@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Mechanics
   get "/mechanics", to: "mechanics#index"
   get "/mechanics/:mechanic_id", to: "mechanics#show"
+  patch "/mechanics/:mechanic_id", to: "mechanics#update"
 
   # Amusement Parks
   get "/amusement_parks/:park_id", to: "amusement_parks#show"
