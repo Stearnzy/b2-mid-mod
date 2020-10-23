@@ -41,19 +41,19 @@ describe "As a user" do
         amusement_park_id: "#{@amusement_park_2.id}"
         })
 
-      @ride_mech_1 = RideMechanics.create!({
+      @ride_mech_1 = RideMechanic.create!({
         ride_id: @ride_1.id,
         mechanic_id: @mechanic_1.id
         })
 
-      @ride_mech_1 = RideMechanics.create!({
+      @ride_mech_1 = RideMechanic.create!({
         ride_id: @ride_3.id,
         mechanic_id: @mechanic_1.id
         })
 
-      @ride_mech_1 = RideMechanics.create!({
+      @ride_mech_1 = RideMechanic.create!({
         ride_id: @ride_2.id,
-        mechanic_id: @mechanic_3.id
+        mechanic_id: @mechanic_2.id
         })
     end
 
