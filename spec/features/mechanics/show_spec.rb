@@ -71,8 +71,9 @@ describe "As a user" do
     it "I see a form to add a ride to their workload" do
       visit "/mechanics/#{@mechanic_1.id}"
 
-      expect(page).to have_content("Ride ID:")
-      expect(page).to have_field("Ride ID")
+      expect(page).to have_content("Add ride to mechanic profile")
+      expect(page).to have_content("Add ride id:")
+      expect(page).to have_field(:ride_id)
     end
   end
 end
