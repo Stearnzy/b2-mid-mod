@@ -1,3 +1,10 @@
 <h1><%= @amusement_park.name %></h1>
 
 <h2>Admissions: <%= @amusement_park.convert_price %></h2>
+
+<h3>Rides:</h3>
+<ol>
+  <% @amusement_park.rides.each do |ride| %>
+    <li><%= ride.name %></li>
+  <% end %>
+</ol>
