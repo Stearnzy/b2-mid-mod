@@ -7,4 +7,11 @@
   <% @mechanic.rides.each do |ride| %>
     <li><%= ride.name %></li>
   <% end %>
-</ul>
+</ul><br>
+
+<h4>Add ride to mechanic profile</h4>
+<%= form_tag "/mechanics/#{@mechanic.id}", method: :patch do %>
+  <%= label_tag "Add ride id:" %>
+  <%= number_field_tag :ride_id %>
+  <%= submit_tag "Submit" %>
+<% end %>
