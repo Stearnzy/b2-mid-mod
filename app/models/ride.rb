@@ -1,5 +1,6 @@
 class Ride < ApplicationRecord
   validates_presence_of :name, :thrill_rating
-  belong_to :amusement_park
-  has_many :mechanics
+  belongs_to :amusement_park
+  has_many :ride_mechanics
+  has_many :mechanics, through: :ride_mechanics
 end
