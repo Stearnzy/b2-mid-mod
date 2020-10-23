@@ -41,6 +41,12 @@ describe "As a user" do
         amusement_park_id: "#{@amusement_park_2.id}"
         })
 
+      @ride_4 = Ride.create!({
+        name: "Twister II",
+        thrill_rating: 6,
+        amusement_park_id: "#{@amusement_park_2.id}"
+        })
+
       @ride_mech_1 = RideMechanic.create!({
         ride_id: @ride_1.id,
         mechanic_id: @mechanic_1.id
@@ -74,6 +80,14 @@ describe "As a user" do
       expect(page).to have_content("Add ride to mechanic profile")
       expect(page).to have_content("Add ride id:")
       expect(page).to have_field(:ride_id)
+    end
+
+    it "When I fell the field of an existing ride's id and click submit, I am taken back
+        to the mechanics show page and see the newly added ride" do
+      visit "/mechanics/#{@mechanic_1.id}"
+
+      fill_in :ride_id, with: @ride_4.id
+      click_on "Submit"
     end
   end
 end
